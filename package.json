@@ -1,0 +1,19 @@
+{
+  "name": "onigiri",
+  "version": "1.0.0",
+  "description": "Mini Node MVC Framework",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yktr-inc/onigiri.git"
+  },
+  "author": "HARANG, VARVEROPOULOS, LIEGE, MATI",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yktr-inc/onigiri/issues"
+  },
+  "homepage": "https://github.com/yktr-inc/onigiri#readme"
+}
