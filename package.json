@@ -2,9 +2,22 @@
   "name": "onigiri",
   "version": "1.0.0",
   "description": "Mini Node MVC Framework",
-  "main": "app.js",
+  "main": "app/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "./node_modules/.bin/nodemon app/app.js",
+    "lint": "./node_modules/.bin/eslint ./app"
+  },
+  "dependencies": {
+    "onigiri": "yktr-inc/onigiri#feature/bootstrap",
+    "gyoza": "yktr-inc/gyoza#develop",
+    "dotenv": "^6.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "jsdoc": "^3.5.5",
+    "nodemon": "^1.18.9"
   },
   "repository": {
     "type": "git",
