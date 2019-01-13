@@ -10,11 +10,7 @@ const templateConf = {
   cache: true,
 };
 
-const strategy = {
-  check: (res, req) => {
-    console.log(res);
-  },
-}
+const strategy = req => true;
 
 const appConf = {
   port: process.env.NODE_PORT,
@@ -25,4 +21,14 @@ const appConf = {
   template: gyoza(templateConf)
 };
 
-onigiri.Server(appConf);
+const server = onigiri.Server(appConf);
+
+server.register('response', (req, res) => console.log('Middleware 1 res'));
+server.register('response', (res) => addHeader(res));
+server.register('response', (req, res) => console.log('Middleware 3 res'));
+server.register('request', (req, res) => console.log('Middleware 0 req'));
+
+const addHeader = res => {
+  console.log(res);
+  return res;
+}

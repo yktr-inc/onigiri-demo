@@ -12,9 +12,10 @@ module.exports = [
     {
         method: "GET",
         path: "/api",
+        auth: true,
         api: {
           type: 'application/vnd.api+json',
-          code: 200,
+          code: 204,
         },
         handler: indexHandler.apiResponse,
         options: {
