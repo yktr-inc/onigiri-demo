@@ -12,6 +12,10 @@ module.exports = [
     {
         method: "GET",
         path: "/api",
+        api: {
+          type: 'application/vnd.api+json',
+          code: 200,
+        },
         handler: indexHandler.apiResponse,
         options: {
             auth: true,
@@ -19,8 +23,12 @@ module.exports = [
     },
     {
         method: "GET",
-        path: "/index/:id",
-        handler: indexHandler.index,
+        path: "/index/:id/:lol",
+        api: {
+          type: 'application/json',
+          code: 200,
+        },
+        handler: indexHandler.getUser,
         options: {},
     },
 ];

@@ -1,4 +1,5 @@
 const Client = require('../client/userClient');
+const JSONAPISerializer = require('jsonapi-serializer').Serializer;
 
 module.exports = {
     index(res, req) {
@@ -15,14 +16,18 @@ module.exports = {
     },
     apiResponse(res, req) {
 
-      const user = Client.getUser();
+      const UserSerializer = new JSONAPISerializer('users', {
+        attributes: ['firstName', 'lastName']
+      });
 
-      return {
-        view: 'index',
-        params: {
-          user: user
-        }
-      };
+      const data = [{ id: 1, firstName: 'Louis', lastName: 'Harang' }];
 
+      var users = UserSerializer.serialize(data);
+
+      return users;
+
+    },
+    getUser(res, req, params) {
+      return params;
     }
 };

@@ -8,9 +8,10 @@
     "lint": "./node_modules/.bin/eslint ./app"
   },
   "dependencies": {
-    "onigiri": "yktr-inc/onigiri#feature/bootstrap",
+    "dotenv": "^6.2.0",
     "gyoza": "yktr-inc/gyoza#develop",
-    "dotenv": "^6.2.0"
+    "jsonapi-serializer": "^3.6.4",
+    "onigiri": "yktr-inc/onigiri#feature/bootstrap"
   },
   "devDependencies": {
     "eslint": "^5.9.0",
