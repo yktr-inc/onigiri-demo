@@ -2,32 +2,27 @@ const indexHandler = require('../handlers/indexHandler');
 
 module.exports = [
     {
-        method: "GET",
-        path: "/",
+        method: 'GET',
+        path: '/',
         handler: indexHandler.index,
-        options: {
-            auth: false,
-        }
+        options: {},
     },
     {
-        method: "GET",
-        path: "/api",
+        method: 'GET',
+        path: '/api',
         auth: true,
         api: {
-          type: 'application/vnd.api+json',
-          code: 204,
+            type: 'application/vnd.api+json',
+            code: 200,
         },
         handler: indexHandler.apiResponse,
-        options: {
-            auth: true,
-        }
     },
     {
-        method: "GET",
-        path: "/index/:id/:lol",
+        method: 'GET',
+        path: '/index/:id/:lol',
         api: {
-          type: 'application/json',
-          code: 200,
+            type: 'application/json',
+            code: 200,
         },
         handler: indexHandler.getUser,
         options: {},
